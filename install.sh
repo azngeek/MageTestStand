@@ -59,6 +59,9 @@ if [ ! -f htdocs/app/etc/local.xml ] ; then
       --baseUrl="http://magento.local/" || { echo "Installing Magento failed"; exit 1; }
 fi
 
+tools/composer.phar self-update
+
+
 if [ ! -f composer.lock ] ; then
     tools/composer.phar install
 fi
